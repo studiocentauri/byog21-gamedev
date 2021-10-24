@@ -20,15 +20,15 @@ public class ButtonClick : MonoBehaviour
         
     }
 
-    public void OnButtonClick()
-   {
-       if(ButtonWasClicked==false) Clue.counter+=1;
-       ButtonWasClicked=true;
-       ClickedButton = EventSystem.current.currentSelectedGameObject;
-       Clue.ActivateButton(ClickedButton);
-        if (ClickedButton != null)
-           Debug.Log("Clicked on : " + ClickedButton.name);
-         else
-           Debug.Log("currentSelectedGameObject is null");
-    }
+   // public void OnButtonClick()
+   //{
+   //    if(ButtonWasClicked==false) Clue.counter+=1;
+   //    ButtonWasClicked=true;
+   //    ClickedButton = EventSystem.current.currentSelectedGameObject;
+   //    Clue.ActivateButton(ClickedButton);
+   //     if (ClickedButton != null)
+   //        Debug.Log("Clicked on : " + ClickedButton.name);
+   //      else
+   //        Debug.Log("currentSelectedGameObject is null");
+   // }
 }

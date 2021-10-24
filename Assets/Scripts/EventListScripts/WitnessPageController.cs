@@ -20,7 +20,7 @@ public class WitnessPageController : MonoBehaviour
         BEvent.Clear();
         foreach(ReportedEvent i in eventlistcont.getFoundEvents())
         {
-            if(i.Source == "Auth1")
+            if(i.Source == "Cook")
             {
                 AEvent.Add(i);
             }

@@ -192,6 +192,7 @@ public class CameraMovement : MonoBehaviour
         state = CAM_STATE.INSPECT;
         backupPos = transform.position;
         backupRot = transform.rotation;
+        x = -1;
     }
 
     public void EndInspect()

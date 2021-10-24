@@ -1,7 +1,8 @@
 using System.Collections;
-using System.Linq;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimelinePageController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class TimelinePageController : MonoBehaviour
 
     public GameObject alleventContent;
     public GameObject timelineeventContent;
+
+    public clue_info_highlight infohighlight;
 
     public void fetchData()
     {
@@ -105,15 +108,31 @@ public class TimelinePageController : MonoBehaviour
 
     public void OnTest()
     {
-        List<ReportedEvent> Correct = new List<ReportedEvent>() { new ReportedEvent("Event1", "Desc1", "Auth1", true), new ReportedEvent("Event2", "Desc2", "Auth2", true) };
+        List<ReportedEvent> Correct = new List<ReportedEvent>(){};
 
-        if (Correct == Timeline)
+        foreach(ClueObject obj in infohighlight.clues)
         {
-            Debug.Log("Correct Match");
+            
+        }
+
+        if(Timeline.Count == Correct.Count)
+        {
+            for(int i = 0; i< Correct.Count; i++)
+            {
+                if(Timeline[i].id != Correct[i].id || Timeline[i].Source != Correct[i].Source)
+                {
+                    Debug.Log("Incorrect Combination");
+                    return;
+                }
+            }
+            Debug.Log("Correct Combination");
+            SceneManager.LoadScene(2);
+            return;
         }
         else
         {
-            Debug.Log("Incorrect Match");
+            Debug.Log("Incorrect Combination");
+            return;
         }
 
     }

@@ -6,12 +6,6 @@ public class ClueList : MonoBehaviour
 {
     public int counter =0;
     public GameObject[] ClueLists;
-    public 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void ActivateButton(GameObject SelectedButton)
     {
@@ -19,9 +13,4 @@ public class ClueList : MonoBehaviour
         ClueLists[counter-1].transform.Find(Name).gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

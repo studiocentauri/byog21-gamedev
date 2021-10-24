@@ -91,6 +91,12 @@ public class ClickManager : MonoBehaviour
         }
     }
 
+    public void StopClick()
+    {
+        canClick = false;
+        player.GetComponent<PlayerMovement>().MovePlayer(player.transform.position);
+    }
+
     public void ResetClick()
     {
         canClick = true;
@@ -98,7 +104,7 @@ public class ClickManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        dialogueNPC.GetComponentInParent<Dialogue>().InitiateDialogue(player);
+        dialogueNPC.GetComponentInParent<Dialogue>().InitiateDialogue();
     }
 
     public void StartInspect()

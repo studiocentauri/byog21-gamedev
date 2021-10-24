@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class TimeLineEvent : MonoBehaviour
 {
+    public string id;
     public string eventHead;
     public string eventDesc;
     public string Source;
@@ -18,6 +19,7 @@ public class TimeLineEvent : MonoBehaviour
 
     public void copyFromTimelineEvent(ReportedEvent repEvent, int Position, TimelinePageController controller, bool ontimeline = false)
     {
+        id = repEvent.id;
         eventHead = repEvent.eventHead;
         eventDesc = repEvent.eventDesc;
         Source = repEvent.Source;
@@ -31,7 +33,7 @@ public class TimeLineEvent : MonoBehaviour
 
     void setVals()
     {
-        text.text = eventHead + eventDesc;
+        text.text = String.Format("{0}'s Statement \n {1}",Source,eventDesc);
     }
 
     public void onSwitchClicked()

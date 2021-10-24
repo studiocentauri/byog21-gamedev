@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if ((targetPos - transform.position).magnitude <= targetDistance * 1.5f)
             {
+                Debug.Log("Ran");
                 if (movingToEvidence)
                 {
                     GameObject.Find("ClickManager").GetComponent<ClickManager>().StartInspect();
